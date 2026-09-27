@@ -1,0 +1,20 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const user_controller_1 = require("../controllers/user.controller");
+const auth_1 = require("../middleware/auth");
+const validation_1 = require("../middleware/validation");
+const validators_1 = require("../validators");
+const router = (0, express_1.Router)();
+router.use(auth_1.authenticate);
+router.get('/profile', user_controller_1.userController.getProfile);
+router.put('/profile', (0, validation_1.validate)(validators_1.updateProfileSchema), user_controller_1.userController.updateProfile);
+router.put('/profile/basic', (0, validation_1.validate)(validators_1.updateBasicInfoSchema), user_controller_1.userController.updateBasicInfo);
+router.put('/profile/skills', (0, validation_1.validate)(validators_1.updateSkillsSchema), user_controller_1.userController.updateSkills);
+router.put('/profile/interests', (0, validation_1.validate)(validators_1.updateInterestsSchema), user_controller_1.userController.updateInterests);
+router.put('/profile/financial', (0, validation_1.validate)(validators_1.updateFinancialSchema), user_controller_1.userController.updateFinancialInfo);
+router.put('/profile/goals', (0, validation_1.validate)(validators_1.updateGoalsSchema), user_controller_1.userController.updateGoals);
+router.post('/onboarding/complete', user_controller_1.userController.completeOnboarding);
+router.delete('/account', user_controller_1.userController.deleteAccount);
+exports.default = router;
+//# sourceMappingURL=user.routes.js.map

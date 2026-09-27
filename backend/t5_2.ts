@@ -1,0 +1,1 @@
+const x = true ? `कच्चा माल` : `other`;

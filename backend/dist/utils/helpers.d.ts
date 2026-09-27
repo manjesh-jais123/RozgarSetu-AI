@@ -1,0 +1,9 @@
+export declare const generateOTP: (length?: number) => string;
+export declare const formatPhoneNumber: (phone: string) => string;
+export declare const isValidPhoneNumber: (phone: string) => boolean;
+export declare const calculateMatchPercentage: (userSkills: string[], requiredSkills: string[]) => number;
+export declare const calculateDistance: (lat1: number, lon1: number, lat2: number, lon2: number) => number;
+export declare const sleep: (ms: number) => Promise<void>;
+export declare const slugify: (text: string) => string;
+export declare const parseQueryFilters: (query: Record<string, unknown>) => Record<string, unknown>;
+//# sourceMappingURL=helpers.d.ts.map

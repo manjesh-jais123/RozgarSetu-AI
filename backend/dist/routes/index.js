@@ -1,0 +1,31 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const auth_routes_1 = __importDefault(require("./auth.routes"));
+const user_routes_1 = __importDefault(require("./user.routes"));
+const opportunity_routes_1 = __importDefault(require("./opportunity.routes"));
+const learning_routes_1 = __importDefault(require("./learning.routes"));
+const scheme_routes_1 = __importDefault(require("./scheme.routes"));
+const product_routes_1 = __importDefault(require("./product.routes"));
+const market_routes_1 = __importDefault(require("./market.routes"));
+const business_routes_1 = __importDefault(require("./business.routes"));
+const ai_routes_1 = __importDefault(require("./ai.routes"));
+const notification_routes_1 = __importDefault(require("./notification.routes"));
+const admin_routes_1 = __importDefault(require("./admin.routes"));
+const router = (0, express_1.Router)();
+router.use('/auth', auth_routes_1.default);
+router.use('/users', user_routes_1.default);
+router.use('/opportunities', opportunity_routes_1.default);
+router.use('/learning', learning_routes_1.default);
+router.use('/schemes', scheme_routes_1.default);
+router.use('/products', product_routes_1.default);
+router.use('/market', market_routes_1.default);
+router.use('/business', business_routes_1.default);
+router.use('/ai', ai_routes_1.default);
+router.use('/notifications', notification_routes_1.default);
+router.use('/admin', admin_routes_1.default);
+exports.default = router;
+//# sourceMappingURL=index.js.map
