@@ -6,3 +6,9 @@ backend/.env
 frontend/.env
 dist/
 build/
+node_modules/
+.env
+.env.*
+*.env
+dist/
+build/
