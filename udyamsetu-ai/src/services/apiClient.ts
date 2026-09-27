@@ -110,7 +110,16 @@ apiClient.interceptors.response.use(
       }
     }
 
-    return Promise.reject(error);
+    const status = error.response.status;
+    const backendMessage = error.response.data?.message;
+    const apiError = new Error(
+      status >= 500
+        ? 'Something went wrong. Please try again later.'
+        : backendMessage || 'Something went wrong. Please try again.'
+    );
+    apiError.name = 'ApiError';
+    (apiError as Error & { status?: number }).status = status;
+    return Promise.reject(apiError);
   }
 );
 
